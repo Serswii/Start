@@ -6,18 +6,18 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    
-    'components' => [
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'gDFpGVJJh6gJdrML8JYlwbn4Ugq8-6Ct',
-        ],
-        'modules' => [
+    'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
         ],
         'rbac' => 'dektrium\rbac\RbacConsoleModule',
     ],
+    'components' => [
+        'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => 'gDFpGVJJh6gJdrML8JYlwbn4Ugq8-6Ct',
+        ],
+        
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
