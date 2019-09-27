@@ -26,12 +26,12 @@ $config = [
         ],
         'db' => $db,
     ],
-    'modules' => [
-        'user' => [
-            'class' => 'dektrium\user\Module',
-        ],
-        'rbac' => 'dektrium\rbac\RbacConsoleModule',
-    ],
+//    'modules' => [
+//        'user' => [
+//            'class' => 'dektrium\user\Module',
+//        ],
+//        'rbac' => 'dektrium\rbac\RbacConsoleModule',
+//    ],
     'params' => $params,
     /*
     'controllerMap' => [
