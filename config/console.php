@@ -8,12 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
-    'modules' => [
-        'user' => [
-            'class' => 'dektrium\user\Module',
-        ],
-        'rbac' => 'dektrium\rbac\RbacConsoleModule',
-    ],
+    
     'components' => [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
@@ -30,6 +25,12 @@ $config = [
             ],
         ],
         'db' => $db,
+    ],
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+        ],
+        'rbac' => 'dektrium\rbac\RbacConsoleModule',
     ],
     'params' => $params,
     /*
