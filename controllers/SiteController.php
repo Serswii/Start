@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Race;
+use app\models\Raspisanie;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -64,14 +66,14 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionPage($a=null, $b=null,  $c=null, $d=10)
-    {
-        //$a = 39;
-        //$b= "Anime";
-        //$c = 1488;
-        //$d = 10;
-        return $this->render('page', compact('a','b', 'c' , 'd'));
-    }
+//    public function actionPage($a=null, $b=null,  $c=null, $d=10)
+//    {
+//        //$a = 39;
+//        //$b= "Anime";
+//        //$c = 1488;
+//        //$d = 10;
+//        return $this->render('page', compact('a','b', 'c' , 'd'));
+//    }
 
     /**
      * Login action.
@@ -133,5 +135,10 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionProfile(){
+        $cats = Raspisanie::findOne(1);
+        return $this->render('profile', compact('cats'));
     }
 }

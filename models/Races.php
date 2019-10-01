@@ -4,10 +4,13 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Race extends ActiveRecord
+class Races extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'race';
+        return 'races';
     }
+
+
+
 }

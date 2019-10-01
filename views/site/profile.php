@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 023 23.09.18
- * Time: 11:02
- */
+$this->title = 'Profile';
+?>
+<h1>Active Profile</h1>
+<?php
+debug($cats);
+echo count($cats->races);
+debug($cats);
+?>
