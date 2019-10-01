@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
@@ -12,7 +13,7 @@ use app\models\ContactForm;
 class SiteController extends Controller
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function behaviors()
     {
@@ -24,7 +25,7 @@ class SiteController extends Controller
                     [
                         'actions' => ['logout'],
                         'allow' => true,
-                        'roles' => ['viewAdminModule'],
+                        'roles' => ['@'],
                     ],
                 ],
             ],
@@ -38,7 +39,7 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function actions()
     {
@@ -63,10 +64,19 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionPage($a=null, $b=null,  $c=null, $d=10)
+    {
+        //$a = 39;
+        //$b= "Anime";
+        //$c = 1488;
+        //$d = 10;
+        return $this->render('page', compact('a','b', 'c' , 'd'));
+    }
+
     /**
      * Login action.
      *
-     * @return string
+     * @return Response|string
      */
     public function actionLogin()
     {
@@ -78,6 +88,8 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
+
+        $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
@@ -86,7 +98,7 @@ class SiteController extends Controller
     /**
      * Logout action.
      *
-     * @return string
+     * @return Response
      */
     public function actionLogout()
     {
@@ -98,7 +110,7 @@ class SiteController extends Controller
     /**
      * Displays contact page.
      *
-     * @return string
+     * @return Response|string
      */
     public function actionContact()
     {
