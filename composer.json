@@ -21,7 +21,7 @@
         "dektrium/yii2-user": "^0.9.14",
         "dektrium/yii2-rbac": "1.0.0-alpha@dev",
         "components/jqueryui": "^1.12",
-        "yiisoft/yii2-jui": "^2.0@dev"
+        "yiisoft/yii2-jui": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -33,7 +33,14 @@
         "codeception/specify": "~0.4.3"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+      "fxp-asset": {
+        "installer-paths": {
+          "npm-asset-library": "vendor/npm",
+          "bower-asset-library": "vendor/bower"
+        }
+      }
+
     },
     "scripts": {
         "post-create-project-cmd": [
@@ -49,13 +56,9 @@
                     "yii": "0755"
                 }
             ],
-            "generateCookieValidationKey": [
-                "config/web.php"
-            ]
-        },
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
+          "generateCookieValidationKey": [
+            "config/web.php"
+          ]
         }
     }
 }

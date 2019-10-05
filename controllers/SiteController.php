@@ -138,6 +138,12 @@ class SiteController extends Controller
     }
 
     public function actionProfile(){
+//        $model = new Raspisanie();
+//        if ($model->load(Yii::$app->request->post()) && $model->profile(Yii::$app->params['adminEmail'])) {
+//            Yii::$app->session->setFlash('contactFormSubmitted');
+//
+//            return $this->refresh();
+//        }
         $cats = Raspisanie::findOne(1);
         return $this->render('profile', compact('cats'));
     }

@@ -12,6 +12,7 @@ use yii\helpers\Html;
 /**
  * Slider renders a slider jQuery UI widget.
  *
+ * ```php
  * echo Slider::widget([
  *     'clientOptions' => [
  *         'min' => 1,
@@ -37,12 +38,13 @@ class Slider extends Widget
         'stop' => 'slidestop',
     ];
 
+
     /**
      * Executes the widget.
      */
     public function run()
     {
         echo Html::tag('div', '', $this->options);
-        $this->registerWidget('slider', SliderAsset::className());
+        $this->registerWidget('slider');
     }
 }

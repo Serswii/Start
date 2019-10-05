@@ -39,6 +39,15 @@ class Dialog extends Widget
     {
         parent::init();
         echo Html::beginTag('div', $this->options) . "\n";
+
+        //Fix for closing icon (x) not showing up in dialog
+        $this->getView()->registerJs("
+            if ($.fn.button) {
+                var bootstrapButton = $.fn.button.noConflict(); 
+                $.fn.bootstrapBtn = bootstrapButton;
+            }",
+            \yii\web\View::POS_READY
+        );
     }
 
     /**
@@ -47,6 +56,6 @@ class Dialog extends Widget
     public function run()
     {
         echo Html::endTag('div') . "\n";
-        $this->registerWidget('dialog', DialogAsset::className());
+        $this->registerWidget('dialog');
     }
 }
