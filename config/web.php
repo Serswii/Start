@@ -11,6 +11,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'gDFpGVJJh6gJdrML8JYlwbn4Ugq8-6Ct',
+            'baseUrl' => ''
         ],
         
         'cache' => [
@@ -48,14 +49,20 @@ $config = [
         // 'ruleFile' => 'vendor\yiisoft\yii2\rbac\Rule.php'
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+            	// '<action:\w+>' => 'site/<action>'
+                'about' => 'site/about',
+                'contact' => 'site/contact',
+                'profile' => 'site/profile',
+                'login' => 'site/login',
+                'logout' => "site/logout"
             ],
         ],
-        */
+
     ],
 //    'modules' => [
 //        'user' => [
